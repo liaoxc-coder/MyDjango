@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>首页 欢迎, {{ uid }}</h1>
+    <h2>{{ uid }}的班级有:</h2>
+    <div id="content">
+        <ul>
+            {% if citems %}
+                {% for item in citems %}
+                    <li>
+                        <a href="#"> {{ item.cID }} / {{ item.cn }} / {{ item.cETD }} </a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>没有数据请先添加班级</li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div id="showstudent">
+        <ul>
+            {% if allstus %}
+                {% for stus in allstus %}
+                    {% for stu in stus %}
+                        <li>
+                            {{ stu.sID }} / {{ stu.sname }} / {{ stu.stel }}
+                        </li>
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                <li>没有数据请先添加学生</li>
+            {% endif %}
+        </ul>
+
+    </div>
+
+</body>
+</html>

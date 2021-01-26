@@ -1,0 +1,123 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>学员管理系统登录</title>
+    <link rel="favicon icon" href="{% static 'img/favicon.ico' %}">
+	<!--jQuery组件验证码样式-->
+    <link rel="stylesheet" href="{% static 'css/verify.css' %}">
+	<!--自定义样式-->
+    <link href="{% static 'css/login.css' %}" rel="stylesheet" media="all" />
+	<!--jQuery引入-->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<!--jQuery组件验证码 验证事件处理-->
+    <script src="{% static 'js/verify.min.js' %}"></script>
+	<!--初始化全局数据配置-->
+    <script src="{% static 'js/default.js' %}"></script>
+	<!--HTML5本地数据存储localStorage-->
+	<script src="{% static 'js/ls.js' %}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">学生信息管理系统</div>
+    </div>
+    <div class="main">
+        <div class="mainBox">
+            <div class="loginBox">
+                <h2>平台登录</h2>
+                <div id="form_login" action="index.html">
+                    {% csrf_token %}
+                    <input type="text" class="textBorder" placeholder="账号" />
+                    <input type="password" class="textBorder" placeholder="密码" />
+                    <div id="mpanel1"></div>
+                    <input type="submit" value="登录" id="login" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="copy">Powered by 软件大数据学院 © 2014-2020 常州信息职业技术学院 版权所有</p>
+</body>
+<script>
+    // 1.1 jQuery 懒加载，作用是让页面的html结构加载完全之后再执行jQuery代码
+    $(function () {
+		// 通过封装了 jquery验证码组件
+        $('#mpanel1').codeVerify({
+            type: 1,
+            width: '80px',
+            height: '30px',
+            fontSize: '14px',
+            codeLength: 4,
+            btnId: 'login',
+            ready: function () {
+            },
+            success: function () {
+                alert('验证匹配！');
+                //1.1首先要获取用户名和密码
+                // 用户名
+                var get_input_user_name = $('.textBorder')[0].value;
+                // 密码
+                var get_input_user_pass = $('.textBorder')[1].value;
+                //1.2判断 是否为空
+                if (get_input_user_name == '' || get_input_user_pass =='') {
+                    alert('用户名或者密码不能为空');
+                    return;
+                }
+                //1.3 拼接发送请求的url
+                var urlString = '/user/login/';
+                var csrfmiddlewaretoken = '{{ csrf_token }}'; //生成csrf_token值，post请求需要的东西。
+                //1.4 利用ajax技术 向服务器 post 用户名和密码
+                //ajax文档以及使用 https://www.javascriptcn.com/chm/zepto/#$.ajax 
+                $.ajax({
+                    url : urlString,
+                    // 请求类型是POST还是GET
+                    type : 'POST',
+                    // 异步还是同步 默认是异步，false表示同步
+                    async: true,
+                    // 发送数据
+                    data: {
+                        uname: get_input_user_name, 
+                        upwd: get_input_user_pass,
+                        csrfmiddlewaretoken: csrfmiddlewaretoken
+
+                    },
+                    // 超时时间
+                    timeout: 5000,
+                    // 返回数据类型json数据
+                    dataType: 'json',
+                    // 成功返回处理
+                    success: function (data, textStatus, jqXHR) {
+                        //解析json数据
+                        //console.log(data);
+                        //console.log(textStatus);
+                        //console.log(jqXHR);
+                        // 跳转
+                        //window.location.href = '/user/home';
+                        if(data.isUser){
+                            //window.location.href = '/user/home';
+                            var url_ref = '/user/home/' + data.user.uid + '/';
+                            window.location.href = url_ref;
+
+                        } else {
+                            alert(data.msg)
+                        }
+                    },
+                    // 错误返回
+                    error: function (xhr, textStatus) {
+                        console.log('错误');
+                        console.log(xhr);
+                        console.log(textStatus);
+                    }
+                });
+				
+            },
+            error: function () {
+                alert('验证码不匹配！');
+            }
+        });
+		// 动态设置验证码样式
+        $('.varify-input-code').attr('placeholder', '验证码');
+        $('.varify-input-code').css('text-indent', '10px');
+    });
+</script>
+</html>

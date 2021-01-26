@@ -1,0 +1,370 @@
+@charset 'utf-8';
+.n-header {
+    height: 80px;
+    background: #0095da;
+    border-radius: 0px;
+    min-width: 1024px;
+    margin-bottom: 0px;
+}
+
+.n-header-wrapper,
+.navbar-wrapper {
+    height: 100%;
+    min-width: 1024px;
+}
+
+.jx-logo {
+    height: 80px;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.jx-logo>img {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.nav-items {
+    height: 100%;
+    float: right;
+}
+
+.nav-item {
+    /* display: inline-block; */
+    background: #81b5d6;
+    color: #185d87 !important;
+    display: block;
+    height: 36px !important;
+    line-height: 36px !important;
+    text-align: center;
+    float: right;
+    margin-left: 10px;
+    margin-top: 40px;
+    transform: translateY(-50%);
+    width: 100px;
+    padding-top: 0px !important;
+}
+
+.nav-item:hover {
+    background: #e7e7e7 !important;
+}
+
+.main {
+    height: 100%;
+}
+
+.main-content {
+    height: 100%;
+}
+
+.main-row {
+    height: 100%;
+}
+
+.left {
+    padding: 0px;
+    background: rgb(238, 238, 238);
+    border-right: solid 1px #ddd !important;
+    height: 100%;
+}
+
+.left-header {
+    text-align: center;
+    font: 14px/38px "微软雅黑" !important;
+    color: #7e7e7e;
+    height: 38px;
+    border-bottom: solid 1px #dddddd;
+}
+
+.data-item {
+    background: url(/images/xin2.jpg) no-repeat 17px center;
+    color: #678090;
+    /* display: block; */
+    height: 58px;
+    font: 18px/58px "微软雅黑";
+    padding-left: 53px;
+    width: 100%;
+    border-bottom: solid 1px #dddddd;
+}
+
+.item-selector {
+    background: #ffffff url(/images/xin1.jpg) no-repeat 17px center;
+    color: #0095da;
+    transform: translateX(1px);
+    /* position: absolute; */
+    /* left: 1px; */
+}
+
+.class-name {
+    font: bold 18px/60px "微软雅黑";
+    color: #0095da;
+}
+
+.right {
+    padding: 0;
+}
+
+.right-header {
+    font: 14px/38px "微软雅黑";
+    color: #a0a0a0;
+    background: #f5f5f5;
+    border-bottom: solid 1px #dddddd;
+    padding-left: 20px;
+    height: 38px;
+}
+
+.searchBox {
+    padding-top: 15px;
+    padding-right: 24px;
+    width: 320px;
+}
+
+.searchInput {
+    height: 30px;
+    width: 244px;
+    overflow: hidden;
+}
+
+.searchInput input {
+    width: 243px;
+    border: solid 1px #ddd;
+    height: 30px;
+    text-indent: 10px;
+}
+
+.searchBtn {
+    height: 30px;
+    width: 36px;
+    margin-right: 10px;
+}
+
+.searchBtn input {
+    background: url(/images/search.jpg);
+    width: 36px;
+    height: 30px;
+    border: none;
+}
+
+.tools {
+    border: 1px solid #dddddd;
+    /* width: 100%; */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    height: 30px;
+    width: 72px;
+    background: #0095da;
+    border: none;
+    color: #FFF;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.table>thead {
+    background: rgb(241, 244, 249);
+}
+
+.show-datas {
+    padding: 15px;
+}
+
+.table tr td,
+.table tr th {
+    font: 18px/37px "微软雅黑";
+    padding-left: 22px;
+    height: 38px;
+    /* border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+    border-right: none;
+    border-left: none; */
+    color: #808080;
+}
+
+.u-infors {
+    background-color: #e2e2e2;
+}
+
+.img-wrapper {
+    
+    padding-top: 10px;
+    /* border: 1px solid yellow; */
+    text-align: center;
+    background: #fff;
+    position: relative;
+    top: 10px;
+}
+
+.img-wrapper>img {
+    width: 200px;
+}
+
+.img-wrapper>span {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#edit-close {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+    left: 5px;
+}
+
+.edit-close-show {
+    float: right;
+    margin-right: 30px;
+    height: 60px;
+    position: relative;
+    padding: 10px;
+}
+
+.e-tr {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    /* border: 1px solid lightgrey; */
+    /* background: #fff; */
+    color: #678090;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.e-tr input {
+    height: 40px;
+    text-indent: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid rgb(241, 241, 241);
+}
+
+.e-tr label {
+    /* margin-right: 20px; */
+    /* padding: 0 20px; */
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+    margin: 0;
+    background: #fff;
+    font-weight: normal;
+    vertical-align: middle;
+    border: 1px solid rgb(241, 241, 241);
+}
+
+.u-infors .col-md-4,
+.u-infors .col-md-9 {
+    padding: 0;
+}
+
+#e-save {
+    width: 150px;
+    height: 40px;
+    background: rgb(235, 97, 0);
+    line-height: 40px;
+    margin-right: 50px;
+    color: #fff;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.e-select {
+    width: 60%;
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 0px;
+    background: #fff;
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px rgb(241, 241, 241);
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("/images/arrow.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+	text-indent: 10px;
+}
+
+/* 竖条 */
+
+.ver-bar {
+    /* display: inline-block; */
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    float: right;
+    transform: translateX(1px);
+}
+
+/* 编辑页面 */
+
+.edit-stu-info {
+    width: 100%;
+    height: 100%;
+    background: #e2e2e2;
+}
+
+.e-hidden {
+    display: none;
+}
+
+.e-show {
+    display: inline-block;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+/* 编辑 */
+
+.edit-header {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+}
+
+.edit-header>span {
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    /* padding: 0 20px; */
+    /* background: yellow; */
+    border-bottom: 2px solid #0095da;
+    color: #678090;
+}
